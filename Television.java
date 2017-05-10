@@ -1,3 +1,7 @@
+/*
+ * Created on : 5-10-17
+ * Author     : Shane Yang
+ */
 package intuitTelevisionAssignment;
 
 import java.util.Map;
