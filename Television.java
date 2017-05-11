@@ -82,8 +82,10 @@ public class Television {
 			currentChannel = listSize;
 			return channelList.get(currentChannel);
 		}
-		currentChannel--;
-		return channelList.get(currentChannel);
+		else{
+			currentChannel--;
+			return channelList.get(currentChannel);
+		}
 	}
 
 }
