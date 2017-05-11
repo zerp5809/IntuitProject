@@ -24,16 +24,14 @@ public class Television {
 	
 	//includes overloaded constructor in the case user decides to include a starting channel
 	public Television(Map<Integer, String> channelNumberToNameMap){
-	// TODO
-		channelNumberToNameMap.putAll(channelList);
+		channelList.putAll(channelNumberToNameMap);
 		listSize = channelList.size();
 	}
 	public Television(Map<Integer, String> channelNumberToNameMap, int channel){
-		// TODO
-			channelNumberToNameMap.putAll(channelList);
-			currentChannel = channel;
-			listSize = channelList.size();
-		}
+		channelList.putAll(channelNumberToNameMap);
+		currentChannel = channel;
+		listSize = channelList.size();
+	}
 
 	/**
 	* Changes the Television to the desired channel.
@@ -42,19 +40,11 @@ public class Television {
 	* @return
 	The name of the desired channel
 	*/
-	//will check if channel is in list. This can be done one or 2 ways (labeled case1 and case2) case1 will use the boolean containsKey(Object k) method to check if the channel is valid.
-	//case 2 will check if the channlNumber is within the range of the channel numbers.
+	//will check if channel is in list. THe code will use the boolean containsKey(Object k) method to check if the channel is valid.
 	public String goToChannel(int channelNumber) {
-	// TODO
 		//Case1:
 		if (channelList.containsKey(channelNumber))
 			return channelList.get(channelNumber);
-		else
-			return channelList.get(currentChannel);
-		//case2
-		if (channelNumber <= listSize && channelNumber > 0){
-			return channelList.get(channelNumber);
-		}
 		else
 			return channelList.get(currentChannel);
 	}
@@ -67,7 +57,6 @@ public class Television {
 	*/
 	//Checks if channel will go higher than list size(or max channel), if so will loop to beginning of map. Otherwise, will change channel up one value
 	public String channelUp() {
-	// TODO
 		if (listSize == currentChannel){
 			currentChannel = 1;
 			return channelList.get(currentChannel);
